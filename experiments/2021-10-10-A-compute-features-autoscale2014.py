@@ -54,7 +54,6 @@ domains = defaultdict(int)
 for task in suites.build_suite(BENCHMARKS_DIR, SUITE):
     if not task.problem.endswith(".pddl"):
         continue
-    print("TASK", task.domain, task.problem)
     domains[task.domain] += 1
     run = exp.add_run()
     run.add_resource("domain", task.domain_file, symlink=True)
