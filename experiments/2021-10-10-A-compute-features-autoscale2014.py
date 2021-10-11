@@ -28,7 +28,7 @@ NODE = platform.node()
 REMOTE = NODE.endswith(".scicore.unibas.ch") or NODE.endswith(".cluster.bc2.ch")
 if REMOTE:
     ENV = BaselSlurmEnvironment(email="jendrik.seipp@liu.se", partition="infai_2", memory_per_cpu="9G")
-    REPOS = Path(project.USER.remote_repos)
+    REPOS = "/infai/seipp/projects"
     SUITE = project.SUITE_ALL
 else:
     ENV = LocalEnvironment(processes=2)
