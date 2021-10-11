@@ -23,10 +23,11 @@ DIR = Path(__file__).resolve().parent
 NODE = platform.node()
 REMOTE = NODE.endswith(".scicore.unibas.ch") or NODE.endswith(".cluster.bc2.ch")
 
-User = namedtuple("User", ["scp_login", "remote_repos"])
+User = namedtuple("User", ["scp_login", "local_repos", "remote_repos"])
 USERS = {
     "jendrik": User(
         scp_login="seipp@login.scicore.unibas.ch",
+        local_repos="/home/jendrik/projects/Downward",
         remote_repos="/infai/seipp/projects",
     ),
 }
